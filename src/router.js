@@ -4,6 +4,9 @@ import Router from 'vue-router'
 Vue.use(Router)
 import Library from './views/Library';
 import Lab from './views/Lab';
+import LibWhat from './views/Lib/LibWhat';
+import LibWhy from './views/Lib/LibWhy';
+import LibHow from './views/Lib/LibHow';
 
 export default new Router({
 	mode: 'history',
@@ -11,12 +14,28 @@ export default new Router({
 	routes: [
 		{ 
 			path: '/library', 
-			component: Library ,
-			children: []
+			component: Library,
+			name: 'Library',
+			children: [
+				{
+					path: '/what',
+					component: LibWhat
+				},
+				{
+					path: '/why',
+					component: LibWhy
+				},
+				{
+					path: '/how',
+					component: LibHow
+				}
+
+			]
 		},
 		{ 
 			path: '/lab', 
-			component: Lab 
+			component: Lab,
+			name: 'Lab' 
 		}
 	]
 })

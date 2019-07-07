@@ -17,6 +17,7 @@ export default {
     },
     methods: {
         test() {
+            console.log(this.$router.options.routes);
             console.log(this.$route);
         }
     }
